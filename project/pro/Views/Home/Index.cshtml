@@ -1,0 +1,27 @@
+﻿@model Vm_student
+<form action="/home/addstudent" method="post">
+    <div class="text-center">
+        <input type="text" placeholder="Name"asp-for="Name">
+        <input type="text" placeholder="Family"asp-for="Family">
+        <button type="submit">save</button>
+
+    </div>
+</form>
+
+<table>
+    <tr>
+        <th>name</th>
+        <th>family</th>
+    </tr>
+     @if (ViewBag.list !=null)
+     {
+
+    @foreach (var item in ViewBag.list)
+    {
+        <tr>
+            <th>@item.Name</th>
+            <th>@item.Family</th>
+        </tr>
+    }
+    }
+</table>
